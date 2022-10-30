@@ -2,7 +2,7 @@ import os
 import openai
 
 
-TOKEN = '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'
+TOKEN = 's' + 'k-8oF2E5pt3IMG5x' + 'PZ1mDyT3BlbkFJh8Gq1LocG2Qd5UwfSdgQ'
 
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.api_key = TOKEN
@@ -47,7 +47,6 @@ def get_prompt_from_gpt3(name_of_collection):
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0,
-        stop=["\n\n"]
     )
 
     return response['choices'][0]['text']
@@ -65,11 +64,11 @@ def get_generation_prompt(collection_name):
     return result
 
 
-if __name__ == '__main__':
-    collection_name = 'swaggy shark'
+# if __name__ == '__main__':
+#     collection_name = 'shaggy nft'
+#
+#     final_prompt = get_generation_prompt(collection_name)
 
-    final_prompt = get_generation_prompt(collection_name)
-
-    print(f'Переданное название коллекции: {collection_name}')
-    print('Сгенерированный промпт:')
-    print(final_prompt)
+    # print(f'Переданное название коллекции: {collection_name}')
+    # print('Сгенерированный промпт:')
+    # print(final_prompt)
