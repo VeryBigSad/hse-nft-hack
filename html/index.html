@@ -51,7 +51,7 @@
 
         function addRow(){
             let wrapper = document.createElement('div');
-            wrapper.classList.add('items-stretch');
+            wrapper.classList.add('items-stretch', 'flex', 'justify-center');
 
             for(let i = 0; i < NUM_OF_IMAGES; ++i){
                 wrapper.appendChild( createElement() );
@@ -61,9 +61,9 @@
         }
 
         function createElement(){
-            let myImage = new Image(100, 200);
+            let myImage = new Image(500, 700);
             myImage.src = 'mud.jpg';
-            myImage.classList.add('image');
+            myImage.classList.add('image', 'ml-10');
 
             return myImage;
         }
