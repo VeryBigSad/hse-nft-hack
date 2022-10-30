@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header class="flex justify-center pt-5">
+    <header class="flex justify-center pt-5 space-x-{10px}">
         <div>
             <?xml version="1.0" encoding="UTF-8"?>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100px" height="100px" viewBox="0 0 100 100" version="1.1">
@@ -27,7 +27,19 @@
             </g>
             </svg>
         </div>
-    <p class="font-semibold text-2xl font-bold mt-10 text-center ">Страница пользователя</p>
+
+        <div class="pt-7 ml-5">
+            <a class="font-semibold text-2xl font-bold" href="#">Главная</a>
+        </div>
+
+        <div class="pt-7 ml-5">
+            <a class="font-semibold text-2xl font-bold" href="#">Генерация коллекций</a>
+        </div>
+
+        <div class="pt-7 ml-5">
+            <a class="font-semibold text-2xl font-bold" href="#">Войти с Meta Mask</a>
+        </div>
+
     </header>
     <div class="flex container mx-auto justify-center">
         <p class="text-[64px]">Ваши коллекции</p>
@@ -35,7 +47,7 @@
 
 
      <div id="recycler">
-        <button id="but" onclick="create()">Нажми на меня!</button>
+        <button id="but" onclick="create()">Сгенерировать коллекцию</button>
      </div>
 
      <div id="collections">
@@ -51,7 +63,7 @@
 
         function addRow(){
             let wrapper = document.createElement('div');
-            wrapper.classList.add('items-stretch');
+            wrapper.classList.add('items-stretch', 'flex', 'justify-center', 'mb-20');
 
             for(let i = 0; i < NUM_OF_IMAGES; ++i){
                 wrapper.appendChild( createElement() );
@@ -61,9 +73,9 @@
         }
 
         function createElement(){
-            let myImage = new Image(100, 200);
+            let myImage = new Image(500, 700);
             myImage.src = 'mud.jpg';
-            myImage.classList.add('image');
+            myImage.classList.add('image', 'ml-10');
 
             return myImage;
         }
