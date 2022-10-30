@@ -34,6 +34,7 @@ def get_openai_data_view(request):
         raw_data = get_generation_prompt(json.loads(request.body)['collection'])
         dict_data = get_dict_data(raw_data)
         return JsonResponse(dict_data)
+    return HttpResponse('hi')
 
 
 @csrf_exempt
@@ -43,3 +44,4 @@ def download(request):
         filename = f'clown{random.randint(1, 100000)}.png'
         download_file_from_colab(data, filename)
         return FileResponse(open(filename, 'rb'))
+    return HttpResponse('hi')
