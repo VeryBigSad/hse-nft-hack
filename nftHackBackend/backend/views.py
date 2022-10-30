@@ -31,7 +31,7 @@ def get_dict_data(raw_data):
 @csrf_exempt
 def get_openai_data_view(request):
     if request.method == 'POST':
-        raw_data = get_generation_prompt(request.POST['collection'])
+        raw_data = get_generation_prompt(json.loads(request.body)['collection'])
         dict_data = get_dict_data(raw_data)
         return JsonResponse(dict_data)
 
