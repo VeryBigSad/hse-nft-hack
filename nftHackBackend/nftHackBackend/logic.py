@@ -56,10 +56,10 @@ def get_generation_prompt(collection_name):
     result = get_prompt_from_gpt3(collection_name)
 
     style_index = result.find('STYLE')
-    addition_to_name = result[:style_index - 1]
+    # addition_to_name = result[:style_index - 1]
     result = result[style_index:]
 
-    result = f'NAME: "{collection_name}{addition_to_name}"\n{result}'
+    result = f'NAME: "{collection_name}"\n{result}'
 
     return result
 
