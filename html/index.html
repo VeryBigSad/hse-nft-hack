@@ -28,6 +28,19 @@
         <p class="text-[64px]">Ваши коллекции</p>
      </div>
 
+
+     <div id="recycler">
+        <button id="but" onclick="create()">Нажми на меня!</button>
+     </div>
+
+     <script>
+        function create(){
+
+            const myImage = new Image(100, 200);
+            myImage.src = 'mud.jpg';
+            recycler.appendChild(myImage);
+        }
+     </script>
 </body>
 
 </html>
