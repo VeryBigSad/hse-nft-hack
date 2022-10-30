@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -34,11 +34,6 @@
       </table>
        
       <script>
-    //       "background": ["ocean", "deep sea", "beach"],
-    //     "head": ["shark", "human", "fish"],
-    //     "clothing": ["wet suit", "scuba gear", "swimming trunks"]
-    //
-           
 		let list = [
 			{"background": ["ocean", "deep sea", "beach"]},
 			{"head": ["shark", "human", "fish"]},
@@ -46,11 +41,7 @@
 		];
 		
 		function constructTable(selector) {
-			// Getting the all column names
 			let cols = Headers(list, selector); 
-			console.log(cols)
-
-			// add_line(table, cols);
 
 			for(let i = 0; i < list[0][cols[0]].length; ++i){
 				let new_data = [];
@@ -60,24 +51,7 @@
 				}
 
 				add_line(table, new_data);
-				// console.log(new_data);
 			}
-			// Traversing the JSON data
-			// for (let i = 0; i < list.length; i++) {
-			// 	let row = $('<tr/>');  
-			// 	for (let colIndex = 0; colIndex < cols.length; colIndex++)
-			// 	{
-			// 		let val = list[i][cols[colIndex]];
-					
-			// 		// If there is any key, which is matching
-			// 		// with the column name
-			// 		if (val == null) val = ""; 
-			// 			row.append($('<td/>').html(val));
-			// 	}
-				
-			// 	// Adding each row to the table
-			// 	$(selector).append(row);
-			// }
 		}
 
 		function add_line(parent, new_data){
@@ -91,16 +65,6 @@
 
 				line.appendChild(td);
 			});
-			// let time_tr = document.createElement('td');
-			// time_tr.innerHTML = time;
-			// let name_tr = document.createElement('td');
-			// name_tr.innerHTML = name;
-			// let location_tr = document.createElement('td');
-			// location_tr.innerHTML = location;
-			
-			// line.appendChild(time_tr);
-			// line.appendChild(name_tr);
-			// line.appendChild(location_tr);
 
 			parent.appendChild(line);
 		}
@@ -116,13 +80,11 @@
 					if ($.inArray(k, columns) == -1) {
 						columns.push(k);
 						
-						// Creating the header
 						header.append($('<th/>').html(k));
 					}
 				}
 			}
 			
-			// Appending the header to the table
 			$(selector).append(header);
 				return columns;
 		}      

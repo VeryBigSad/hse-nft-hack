@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8">
@@ -38,14 +38,34 @@
         <button id="but" onclick="create()">Нажми на меня!</button>
      </div>
 
+     <div id="collections">
+
+     </div>
+
      <script>
+        const NUM_OF_IMAGES = 3;
+
         function create(){
-            const myImage = new Image(100, 200);
+            addRow();
+        }
+
+        function addRow(){
+            let wrapper = document.createElement('div');
+            wrapper.classList.add('items-stretch');
+
+            for(let i = 0; i < NUM_OF_IMAGES; ++i){
+                wrapper.appendChild( createElement() );
+            }
+
+            collections.appendChild(wrapper);
+        }
+
+        function createElement(){
+            let myImage = new Image(100, 200);
             myImage.src = 'mud.jpg';
             myImage.classList.add('image');
-            recycler.appendChild(myImage);
 
-            
+            return myImage;
         }
      </script>
 </body>
