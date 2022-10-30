@@ -16,10 +16,10 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
               Collection name:
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Collection name">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="collection" type="text" placeholder="Collection name">
           </div>
           <div class="flex justify-center">
-            <button id="generator" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick = "constructTable('#table'), disabled=true">
+            <button id="generator" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
               Generate
             </button>
           </div>
@@ -39,6 +39,8 @@
 			{"head": ["shark", "human", "fish"]},
 			{"clothing": ["wet suit", "scuba gear", "swimming trunks"]}
 		];
+
+		// generator.addEventListener('ckic')
 		
 		function constructTable(selector) {
 			let cols = Headers(list, selector); 
@@ -91,6 +93,7 @@
       </script>
       </div>
 
+	  <script type="module" src="/js/create.js"></script>
 </body>
 
 </html>
